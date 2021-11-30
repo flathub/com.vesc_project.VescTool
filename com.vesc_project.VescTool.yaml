@@ -1,6 +1,6 @@
 app-id: com.vesc_project.VescTool
 runtime: org.kde.Platform
-runtime-version: '5.15'
+runtime-version: '5.15-21.08'
 sdk: org.kde.Sdk
 command: vesc_tool
 finish-args:
