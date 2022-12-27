@@ -1,0 +1,7 @@
+[Desktop Entry]
+Version=1.0
+Name=VescTool
+Exec=vesc_tool %u
+Type=Application
+Icon=com.vesc_project.VescTool
+Categories=Development
