@@ -1,0 +1,25 @@
+From d34a6c52282bd305eb48b710fcb833e2dfa9d925 Mon Sep 17 00:00:00 2001
+From: Alberto Fanjul <albertofanjul@gmail.com>
+Date: Mon, 4 Mar 2024 23:34:17 +0100
+Subject: [PATCH] exclude firmware
+
+---
+ vesc_tool.pro | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/vesc_tool.pro b/vesc_tool.pro
+index ad439af..4dd51b8 100644
+--- a/vesc_tool.pro
++++ b/vesc_tool.pro
+@@ -42,7 +42,7 @@ ios: {
+ #CONFIG += build_mobile
+ 
+ # Exclude built-in firmwares
+-#CONFIG += exclude_fw
++CONFIG += exclude_fw
+ 
+ ios: {
+     CONFIG    += build_mobile
+-- 
+2.43.0
+
