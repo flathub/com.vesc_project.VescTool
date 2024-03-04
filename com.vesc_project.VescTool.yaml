@@ -1,6 +1,6 @@
 app-id: com.vesc_project.VescTool
 runtime: org.kde.Platform
-runtime-version: '5.15-21.08'
+runtime-version: '5.15-23.08'
 sdk: org.kde.Sdk
 command: vesc_tool
 finish-args:
@@ -13,6 +13,13 @@ finish-args:
 modules:
   - name: vesc-tool
     buildsystem: qmake
+    config-opts:
+    - CONFIG+=release
+    - CONFIG+=release_lin
+    - CONFIG+=build_original
+    - CONFIG+=exclude_fw
+    build-options:
+      cxxflags: -Wno-deprecated
     post-install:
       - install -Dm644 com.vesc_project.VescTool.png -t /app/share/icons/hicolor/128x128/apps/
       - install -Dm644 com.vesc_project.VescTool.metainfo.xml -t /app/share/metainfo/
@@ -20,7 +27,7 @@ modules:
     sources:
       - type: git
         url: https://github.com/vedderb/vesc_tool
-        commit: b0632c42e896175f9d731be5f146f0202a0fe17c
+        commit: f3c6fe5f5dcf0cb2fba7676204ea3db1dc8ff4ee
       - type: patch
         path: install_linux.patch
       - type: file
