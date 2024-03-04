@@ -1,21 +1,23 @@
-diff --git i/vesc_tool.pro w/vesc_tool.pro
-index 0fe4872..4ac3d9a 100644
---- i/vesc_tool.pro
-+++ w/vesc_tool.pro
-@@ -100,7 +100,6 @@ contains(DEFINES, HAS_GAMEPAD) {
- android: QT += androidextras
- 
- android: TARGET = vesc_tool
--!android: TARGET = vesc_tool_$$VT_VERSION
- 
- ANDROID_VERSION = 1
- 
-@@ -258,3 +257,31 @@ DISTFILES += \
-     android/src/com/vedder/vesc/Utils.java
- 
- ANDROID_PACKAGE_SOURCE_DIR = $$PWD/android
+From 9d61fe5780bf6ca36724f56eefff3a8c5271efa1 Mon Sep 17 00:00:00 2001
+From: Alberto Fanjul <albertofanjul@gmail.com>
+Date: Mon, 4 Mar 2024 22:14:39 +0100
+Subject: [PATCH] configuration for unix OS
+
+---
+ vesc_tool.pro | 29 +++++++++++++++++++++++++++++
+ 1 file changed, 29 insertions(+)
+
+diff --git a/vesc_tool.pro b/vesc_tool.pro
+index 53ff3b0..ad439af 100644
+--- a/vesc_tool.pro
++++ b/vesc_tool.pro
+@@ -355,6 +355,36 @@ ios {
+     CONFIG -= warn_on
+     QMAKE_APPLE_TARGETED_DEVICE_FAMILY = 1,2
+ }
 +
 +unix {
++    TARGET = vesc_tool
 +    isEmpty(PREFIX) {
 +        PREFIX = /usr/local
 +    }
@@ -42,3 +44,9 @@ index 0fe4872..4ac3d9a 100644
 +    vardir.path = $$VARDIR
 +    vardir.commands = true
 +}
++
+ CONFIG -= warn_on
+
+ contains(ANDROID_TARGET_ARCH,) {
+--
+2.43.0
