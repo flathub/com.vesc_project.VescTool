@@ -1,0 +1,51 @@
+From 473e3bf43559b7516f2ee0ebdcfa1aed3e84bb56 Mon Sep 17 00:00:00 2001
+From: Alberto Fanjul <albertofanjul@gmail.com>
+Date: Tue, 5 Mar 2024 00:06:36 +0100
+Subject: [PATCH] fix lzokay
+
+---
+ lzokay/lzokay.cpp | 2 +-
+ lzokay/lzokay.hpp | 9 +++++----
+ 2 files changed, 6 insertions(+), 5 deletions(-)
+
+diff --git a/lzokay/lzokay.cpp b/lzokay/lzokay.cpp
+index e59e9ca..fc11bcf 100644
+--- a/lzokay/lzokay.cpp
++++ b/lzokay/lzokay.cpp
+@@ -643,4 +643,4 @@ EResult compress(const uint8_t* src, std::size_t src_size,
+   return EResult::Success;
+ }
+ 
+-}
+\ No newline at end of file
++}
+diff --git a/lzokay/lzokay.hpp b/lzokay/lzokay.hpp
+index 8d9a861..f29182e 100644
+--- a/lzokay/lzokay.hpp
++++ b/lzokay/lzokay.hpp
+@@ -2,6 +2,7 @@
+ #include <cstddef>
+ #include <cstdint>
+ #include <memory>
++#include <array>
+ 
+ namespace lzokay {
+ 
+@@ -23,10 +24,10 @@ protected:
+ 
+   /* List encoding of previous 3-byte data matches */
+   struct Match3 {
+-    uint16_t head[HashSize]; /* key -> chain-head-pos */
+-    uint16_t chain_sz[HashSize]; /* key -> chain-size */
+-    uint16_t chain[BufSize]; /* chain-pos -> next-chain-pos */
+-    uint16_t best_len[BufSize]; /* chain-pos -> best-match-length */
++    std::array<uint16_t, HashSize> head; /* key -> chain-head-pos */
++    std::array<uint16_t, HashSize> chain_sz; /* key -> chain-size */
++    std::array<uint16_t, BufSize> chain; /* chain-pos -> next-chain-pos */
++    std::array<uint16_t, BufSize> best_len; /* chain-pos -> best-match-length */
+   };
+   /* Encoding of 2-byte data matches */
+   struct Match2 {
+-- 
+2.43.0
+

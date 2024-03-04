@@ -19,6 +19,14 @@
   </screenshots>
 
   <releases>
+    <release version="6.02" type="development" date="2023-03-12" urgency="medium">
+      <description>
+        <p>Release</p>
+      </description>
+    </release>
+  </releases>
+
+  <releases>
     <release version="3.00" type="development" date="2021-01-11" urgency="medium">
       <description>
         <p>Release</p>
@@ -27,7 +35,7 @@
   </releases>
 
   <provides>
-    <binary>Ryujinx</binary>
+    <binary>vesc_tool</binary>
   </provides>
 
   <launchable type="desktop-id">com.vesc_project.VescTool.desktop</launchable>
