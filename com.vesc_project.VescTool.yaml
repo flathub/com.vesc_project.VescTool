@@ -27,7 +27,7 @@ modules:
     sources:
       - type: git
         url: https://github.com/vedderb/vesc_tool
-        commit: f3c6fe5f5dcf0cb2fba7676204ea3db1dc8ff4ee
+        commit: cd0ca47e8a54abd5c24e288d7b3c6e0d918928df
       - type: patch
         path: install_linux.patch
       - type: file
