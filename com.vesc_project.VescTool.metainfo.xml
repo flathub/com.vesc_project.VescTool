@@ -15,18 +15,21 @@
   <screenshots>
     <screenshot type="default">
       <image width="1077" height="609">https://vesc-project.com/sites/default/files/vesc_tool.png</image>
+      <caption>main view</caption>
     </screenshot>
   </screenshots>
 
   <releases>
+    <release version="6.05" type="development" date="2024-12-08" urgency="medium">
+      <description>
+        <p>Release</p>
+      </description>
+    </release>
     <release version="6.02" type="development" date="2023-03-12" urgency="medium">
       <description>
         <p>Release</p>
       </description>
     </release>
-  </releases>
-
-  <releases>
     <release version="3.00" type="development" date="2021-01-11" urgency="medium">
       <description>
         <p>Release</p>
@@ -42,6 +45,7 @@
   <url type="homepage">https://vesc-project.com</url>
   <url type="bugtracker">https://github.com/vedderb/vesc_tool/issues</url>
   <url type="donation">https://vesc-project.com/donations</url>
+  <developer_name>Benjamin Vedder</developer_name>
 
   <content_rating type="oars-1.1">
     <content_attribute id="violence-cartoon">none</content_attribute>
